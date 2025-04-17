@@ -28,4 +28,4 @@
 1. Клонируйте репозиторий:
    ```bash
    git clone https://github.com/Tand00ru/internet_shop.git
-   cd mysite
+   cd internet_shop 
