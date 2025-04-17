@@ -1,0 +1,34 @@
+{% extends 'admin_panel/base.html' %}
+
+{% block content %}
+<h2>Позиции заказа</h2>
+
+<form method="GET" action="{% url 'orderitem_list' %}">
+    <input type="text" name="q" placeholder="Поиск по названию товара" value="{{ request.GET.q }}">
+    <button type="submit">Поиск</button>
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <th><a href="?sort=product__name">Товар ↑</a> | <a href="?sort=-product__name">↓</a></th>
+            <th>Цена</th>
+            <th>Количество</th>
+            <th>Действия</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for orderitem in orderitems %}
+        <tr>
+            <td>{{ orderitem.product.name }}</td>
+            <td>{{ orderitem.price }} {{ orderitem.currency }}</td>
+            <td>{{ orderitem.quantity }}</td>
+            <td>
+                <a href="{% url 'orderitem_update' orderitem.id %}">Изменить</a> |
+                <a href="{% url 'orderitem_delete' orderitem.id %}">Удалить</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

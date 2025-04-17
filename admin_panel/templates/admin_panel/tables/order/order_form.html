@@ -1,0 +1,29 @@
+{% extends 'admin_panel/base.html' %}
+
+{% block content %}
+<h2>
+    {% if order_form.instance.pk %}
+        Редактировать заказ №{{ order_form.instance.id }}
+    {% else %}
+        Создать новый заказ
+    {% endif %}
+</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ order_form.as_p }}
+
+    <h3>Позиции заказа</h3>
+    {{ formset.management_form }}
+    {% for form in formset %}
+        <div>
+            {{ form.as_p }}
+            {% if form.instance.pk %}
+                <label for="{{ form.prefix }}-DELETE">Удалить</label>
+                {{ form.DELETE }}
+            {% endif %}
+        </div>
+        <hr>
+    {% endfor %}
+    <button type="submit">Сохранить заказ</button>
+</form>
+{% endblock %}

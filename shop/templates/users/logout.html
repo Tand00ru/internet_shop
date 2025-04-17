@@ -1,0 +1,144 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa Di Sapore</title>
+    <link href="https://fonts.googleapis.com/css2?family=Jim+Nightshade&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+    <link rel="stylesheet" href="{% static 'css/logout.css' %}">
+</head>
+<body>
+
+<header class="main_header">
+        <div class="main_header_name">
+        <a href="{% url 'shop:main' %}">
+            <div class="header_main_img">
+                <img src="{% static 'images/near_logo.png' %}" alt="Image near logo" class="main_img">
+            </div>
+            <!-- /.header_main_img -->
+            <div class="main_name_and_img">
+                <div class="main_name">
+                    <p class="main_name_logo">Casa Di Sapore</p>
+                </div>
+                <!-- /.main_name -->
+                <div class="second_main__img">
+                    <img src="{% static '/images/under_logo.svg' %}" alt="Image under logo" class="under_text">
+                </div>
+                <!-- /.second_main__img -->
+            </div>
+            <!-- /.main_name_and_img -->
+        </a>
+        <!-- /.main_header_name -->
+
+        {% if user.is_authenticated and user.is_superuser %}
+        <a href="http://127.0.0.1:8001/admin_panel/categories" class="admin-link">
+            <img src="{% static 'images/bd.png' %}" alt="Admin Panel" class="admin-icon">
+        </a>
+        {% endif %}
+        </div>
+
+        <!-- center -->
+        <div class="center_header">
+            <a href="{% url 'shop:menu' %}" class="header_button">Menu</a>
+            <img src="{% static '/images/center.svg' %}" alt="Center image" class="main_header_center">
+            <a href="{% url 'shop:about' %}" class="header_button">About Us</a>
+        </div>
+        <!-- /.center_header -->
+
+        <div class="right_header">
+            <img src="{% static 'images/rosmarin_2.svg' %}" alt="rosmarin" class="rosmarin_header">
+            <a href="http://127.0.0.1:8001/cart/" class="cart-link">
+                <img src="{% static 'images/cart.png' %}" alt="Cart" class="cart-icon">
+            </a>
+            {% if user.is_authenticated %}
+<form method="post" action="{% url 'shop:logout' %}" class="log-in_and_under-img">
+    {% csrf_token %}
+    <button type="submit" class="log-in_and_img">
+        <div class="log-in_header">
+            <p class="log-in">Log out</p>
+            <img src="{% static 'images/account_logo.png' %}" alt="Account logo" class="person">
+        </div>
+        <div class="under_img_log_in">
+        <img src="{% static 'images/under_logo.svg' %}" alt="" class="under_text">
+    </div>
+    </button>
+</form>
+
+            {% else %}
+                <a href="{% url 'shop:login' %}" class="log-in_and_under-img">
+                    <div class="log-in_and_img">
+                        <div class="log-in_header">
+                            <p class="log-in">Log in</p>
+                            <img src="{% static 'images/account_logo.png' %}" alt="Account logo" class="person">
+                        </div>
+                    </div>
+                    <!-- /.log-in_and_img -->
+
+                    <div class="under_img_log_in">
+                        <img src="{% static 'images/under_logo.svg' %}" alt="" class="under_text">
+                    </div>
+                    <!-- /.under_img_log_in -->
+                </a>
+                <!-- /.log-in_and_under-img -->
+            {% endif %}
+        </div>
+        <!-- /.right_header -->
+    </header>
+    <!-- /.main_header -->
+<main>
+    <div class="logout-page">
+        <img class="rosmarins_1" src="{% static 'images/left_branch.png' %}">
+        <p class="logout-message">You have successfully logged out.</p>
+        <a href="{% url 'shop:main' %}" class="logout-button"><p>🡠 Return to home page</p></a>
+        <img class="rosmarins_2" src="{% static 'images/left_branch.png' %}">
+    </div>
+</main>
+
+    <hr>
+    <footer>
+        <div class="left_footer">
+            <p class="info_restorant">
+                information@mail.ru <br>
+                https://vk.com./Casa_Di_Sapore
+            </p>
+            <div class="two_lines_1">
+                <img src="{% static 'images/under_logo.svg' %}" alt="" class="under_text_2">
+                <img src="{% static 'images/under_logo.svg' %}" alt="" class="under_text_2">
+            </div>
+            <!-- /.two_lines -->
+        </div>
+        <!-- /.left_footer -->
+
+        <div class="center_footer">
+
+            <img src="{% static 'images/pizza_footer.svg' %}" alt="" class="center_pizza">
+            <p class="except_monday">Except Monday</p>
+            <div class="rosmar_in_footer_time">
+                <img src="{% static 'images/rosmarin_2.svg' %}" alt="" class="rosmarin_footer_1">
+                <p class="time">9:00-20:00</p>
+                <img src="{% static 'images/rosmarin_2.svg' %}" alt="" class="rosmarin_footer_2">
+            </div>
+
+        </div>
+        <!-- /.center_footer -->
+
+        <div class="right_footer">
+            <p class="address_restourant">
+                Moscow, Suzdalskaya st., 12 A,<br>
+                Shopping center "Suzdalsky", 1st floor.
+            </p>
+            <div class="two_lines_2">
+                <img src="{% static 'images/under_logo.svg' %}" alt="" class="under_text_2">
+                <img src="{% static 'images/under_logo.svg' %}" alt="" class="under_text_2">
+            </div>
+            <!-- /.two_lines -->
+        </div>
+        <!-- /.right_footer -->
+
+
+    </footer>
+</body>
+</html>

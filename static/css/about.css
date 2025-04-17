@@ -1,0 +1,389 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    background-color: #E6D5B4;
+}
+
+p {
+    font-family: 'Jim Nightshade', cursive;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    cursor: default;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+.main_header {
+    background-color: #E6D5B4;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    height: 65px;
+    display: flex;
+}
+
+.cart-link {
+    display: flex;
+    align-items: center;
+    margin-right: 10%;
+}
+
+.cart-icon {
+    width: auto;
+    height: 60%;
+    object-fit: contain;
+    margin-left: 15px;
+}
+
+.main_header_name {
+    display: flex;
+    margin-left: 20px;
+    width: 25%;
+}
+
+.main_header_name a {
+    width: auto;
+    display: flex;
+    text-decoration: none;
+    color: black;
+}
+
+.main_name_and_img {
+    padding-top: 11px;
+    margin-left: -9px;
+}
+
+.main_img {
+    width: 80px;
+    height: 50px;
+    margin-top: 5px;
+    margin-left: -5px;
+}
+
+.second_main__img {
+    position: absolute;
+    width: 100px;
+    top: 30px;
+}
+
+.under_text {
+    width: 100px;
+}
+
+.main_name_logo {
+    position: relative;
+    font-size: 30px;
+}
+
+.center_header {
+    /* margin-left: 50px; */
+    max-lines: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    flex-grow: 1;
+}
+.header_button {
+    border: none;
+    background-color: rgba(45, 114, 67, 0.71);
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Jim Nightshade', cursive;
+    font-size: 23px;
+    height: 30px;
+    width: 140px;
+    margin-top: 15px;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+
+
+.main_header_center {
+    max-width: 100%;
+    height: auto;
+    width: 100px;
+}
+
+.right_header {
+    width: 25%;
+    margin-right: 15px;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto;
+}
+
+.log-in_and_img {
+    max-width: 120px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: none;
+    border: none;
+}
+
+.log-in_and_img:hover {
+    cursor: pointer;
+}
+
+.rosmarin_header {
+    width: 190px;
+    height: 190px;
+    margin-top: -70px;
+    margin-right: -45px;
+}
+
+.admin-icon {
+    width: 60%;
+    height: auto;
+    object-fit: contain;
+    margin-left: 75%;
+}
+
+.log-in_header {
+    position: relative;
+    padding-top: 11px;
+    font-size: 30px;
+    text-decoration: none;
+    font-weight: normal;
+    font-style: normal;
+    color: black;
+    display: flex;
+    align-items: center
+}
+
+.under_img_log_in {
+    position: absolute;
+    width: 100px;
+    top: 30px;
+}
+
+.person {
+    margin-left: 15px;
+    width: 23%;
+    height: 20%;
+    margin-bottom: 10%;
+}
+
+.main_header_center {
+    width: 105px;
+}
+
+
+
+/* Главная часть */
+
+.first {
+    padding: 4% 0% 0% 4%;
+}
+
+.first_text {
+    font-size: 200%;
+}
+
+.second_text {
+    padding-top: 2%;
+}
+
+.under_text_about_us {
+    width: 18%;
+}
+
+.images_under_text {
+    display: flex;
+    gap: 0.3%;
+}
+
+.under_text_about_us2 {
+    width: 50%;
+    height: 200px;
+    background-image: url('../images/under_logo.svg');
+    background-repeat: repeat-x;
+    background-size: contain;
+    background-position: center;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.ul_about_us {
+    list-style-type: circle;
+    padding-left: 20px;
+}
+
+.second_text {
+    display: flex;
+}
+
+.rosmatin_1 {
+    width: 100%;
+    transform: rotate(45deg);
+}
+
+.image_near_second_text {
+    padding-left: 14%;
+}
+
+.down {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-height: 200px;
+    height: auto;
+    padding: 20px 0;
+}
+
+.image_down_1, .image_down_2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+}
+
+.near_pather_left, .near_pather_rigth {
+    width: auto;
+    max-width: 190px;
+    height: auto;
+}
+
+.near_pather_rigth {
+    transform: rotate(180deg);
+    margin-top: 120%; 
+}
+
+
+.owners {
+    display: flex;
+    width: 100%;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    padding-top: 10%;
+}
+
+.left_button, .rigth_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px; /* Увеличенный размер кнопки */
+    height: 150px;
+    background-color: transparent;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transform: rotate(-90deg); /* Поворот для левой кнопки */
+}
+
+.rigth_button {
+    transform: rotate(90deg); /* Поворот для правой кнопки */
+}
+
+.left_button img, .rigth_button img {
+    width: 150%; /* Изображение заполняет кнопку */
+    height: auto; /* Сохраняем пропорции */
+}
+
+.owner {
+    min-width: 10px;
+    width: 300px; /* Увеличен размер картинки владельца */
+}
+
+.owners_list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px; /* Увеличена ширина контейнера с картинкой владельца */
+}
+
+/* footer */
+
+footer {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    grid-template-rows: auto auto auto;
+    gap: 20px;
+}
+
+.info_restorant {
+    font-size: 30px;
+    text-align: center;
+}
+
+.two_lines_1 {
+    display: flex;
+    justify-content: center;
+    margin-top: -20px;
+}
+
+.under_text_2 {
+    width: 25%;
+}
+
+.two_lines_2 {
+    display: flex;
+    justify-content: center;
+    margin-top: -20px;
+}
+
+.address_restourant {
+    font-size: 30px;
+    text-align: center;
+}
+
+.center_pizza {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 125px;
+}
+.except_monday {
+    text-align: center;
+    font-size: 30px;
+}
+
+.rosmar_in_footer_time {
+    display: flex;
+    justify-content: space-between;
+}
+
+.time {
+    position: relative;
+    font-size: 30px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.rosmarin_footer_1 {
+    transform: rotate(-120deg);
+    margin-top: -75px;
+    margin-right: -40px;
+}
+
+.rosmarin_footer_2 {
+    margin-top: -80px;
+    margin-left: -40px;
+}
+
+.image_under_info_product {
+    margin-top: -10px;
+}
+
+hr {
+    padding-top: 200px;
+    border: none;
+    border-bottom: 3px solid #0000001b;
+    margin: 0 0 30px 0;
+    width: 100%;
+}
+
+
+

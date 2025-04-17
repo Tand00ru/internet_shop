@@ -1,0 +1,49 @@
+{% extends 'admin_panel/base.html' %}
+
+{% block content %}
+<h2>{% if product %}Редактировать{% else %}Добавить{% endif %} товар</h2>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label>Название:</label><br>
+    <input type="text" name="name" value="{{ product.name|default_if_none:'' }}" required><br><br>
+
+    <label>Слаг:</label><br>
+    <input type="text" name="slug" value="{{ product.slug|default_if_none:'' }}" required><br><br>
+
+    <label>Категория:</label><br>
+    <select name="category" required>
+        {% for category in categories %}
+        <option value="{{ category.id }}" {% if product.category.id == category.id %}selected{% endif %}>{{ category.name }}</option>
+        {% endfor %}
+    </select><br><br>
+
+    <label>Описание:</label><br>
+    <textarea name="description">{{ product.description|default_if_none:'' }}</textarea><br><br>
+
+    <label>Цена:</label><br>
+    <input type="number" name="price" step="0.01" value="{{ product.price|default_if_none:'' }}" required><br><br>
+
+    <label>Валюта:</label><br>
+    <input type="text" name="currency" value="{{ product.currency|default_if_none:'' }}" required><br><br>
+
+    <label>Количество:</label><br>
+    <input type="number" name="quantity" value="{{ product.quantity|default_if_none:'' }}" required><br><br>
+
+    <label>Единица измерения:</label><br>
+    <input type="text" name="measurement" value="{{ product.measurement|default_if_none:'' }}" required><br><br>
+
+    <label>Наличие на складе:</label><br>
+    <input type="number" name="stock" value="{{ product.stock|default_if_none:'' }}" required><br><br>
+
+    <label>Доступен:</label>
+    <input type="checkbox" name="available" {% if product.available %}checked{% endif %}><br><br>
+
+    <label>Новинка:</label>
+    <input type="checkbox" name="is_new" {% if product.is_new %}checked{% endif %}><br><br>
+
+    <label>Изображение:</label><br>
+    <input type="file" name="image"><br><br>
+
+    <button type="submit">Сохранить</button>
+</form>
+{% endblock %}

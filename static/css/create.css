@@ -1,0 +1,358 @@
+/* checkout.css */
+
+/* Общие стили */
+body {
+    background-color: #E6D5B4; /* Бежевый фон */
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: center; /* Центрируем текст */
+}
+
+main {
+    width: 80%;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+h1 {
+    font-family: 'Jim Nightshade', cursive;
+    font-size: 4em;
+    color: rgba(45, 114, 67, 0.71); /* Зелёный цвет заголовка */
+}
+
+.table-divider {
+    width: 250px;
+    height: auto;
+    margin: -40px auto 40px 0;
+}
+
+h2 {
+    font-size: 2.5em;
+    color: rgba(45, 114, 67, 0.71);
+    margin-bottom: 20px;
+    font-family: 'Jim Nightshade', cursive;
+    text-align: center;
+}
+
+.order {
+    text-align: left;
+
+}
+
+/* Стили для таблицы заказа */
+.order-table-container {
+    background-color: #fff;
+    padding: 25px 30px;
+    margin: 0 auto 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 70%; /* Ширина контейнера */
+    text-align: left; /* Выравнивание текста в контейнере по левому краю */
+}
+
+.order-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.order-table th,
+.order-table td {
+    border: 1px solid #ccc;
+    padding: 15px;
+    font-size: 1.2em;
+}
+
+.order-table th {
+    background-color: #fff;
+    color: rgba(45, 114, 67, 0.71);
+    font-weight: bold;
+}
+
+.order-table td {
+    background-color: #fff;
+}
+
+.total {
+    text-align: left;
+    font-size: 25px;
+    margin-top: 15px;
+    padding-left: 15%;
+    color: rgba(45, 114, 67, 0.71);
+    font-weight: bold;
+}
+
+/* Стили для информации о доставке */
+.shipping-info {
+    max-width: 70%;
+    margin: 0 auto 30px;
+    text-align: left;
+    font-size: 1.3em; /* Увеличиваем размер шрифта */
+}
+
+.shipping-info p {
+    margin-bottom: 10px;
+}
+
+.shipping-info strong {
+    color: rgba(45, 114, 67, 0.71);
+    font-size: 1.2em; /* Ещё больше увеличиваем шрифт */
+}
+
+/* Стили для формы заказа */
+.order-form {
+    max-width: 70%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.order-form p {
+    margin-bottom: 20px;
+}
+
+.order-form label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+    color: rgba(45, 114, 67, 0.71);
+}
+
+.order-form input[type="text"],
+.order-form input[type="email"],
+.order-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+.order-form input[type="submit"] {
+    background-color: rgba(45, 114, 67, 0.71);
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.3em;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 10px;
+}
+
+.order-form input[type="submit"]:hover {
+    background-color: rgba(45, 114, 67, 1);
+    transform: translateY(-3px);
+}
+
+ul {
+    list-style-type: none;
+
+}
+
+li {
+    display: flex;
+    font-size: 25px;
+    justify-content: space-around;
+}
+
+span {
+    width: 115px;
+    height: auto;
+
+}
+
+.titles {
+    font-size: 30px;
+}
+
+.order-info {
+    background-color: white;
+
+}
+
+.email {
+    font-size: 25px;
+
+}
+
+.place_order {
+    display:flex;
+    justify-content: center;
+
+}
+/* Общие стили */
+body {
+    background-color: #E6D5B4;
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+main {
+    width: 80%;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+h1 {
+    font-family: 'Jim Nightshade', cursive;
+    font-size: 4em;
+    color: rgba(45, 114, 67, 0.71);
+    margin-bottom: 20px;
+}
+
+.table-divider {
+    width: 250px;
+    height: auto;
+    margin: -40px auto 40px 0;
+}
+
+.order {
+    text-align: left;
+    margin-left: 15%;
+}
+
+.order-info {
+    background-color: #fff;
+    padding: 25px 30px;
+    margin: 0 auto 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 70%;
+    text-align: left;
+}
+
+.order-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.order-table th,
+.order-table td {
+    border: 1px solid #ccc;
+    padding: 15px;
+    font-size: 1.2em;
+    text-align: left;
+}
+
+.order-table th {
+    background-color: rgba(45, 114, 67, 0.71);
+    color: #fff;
+    font-weight: bold;
+}
+
+.order-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Стили для информации о доставке */
+.shipping-info {
+    max-width: 70%;
+    margin: 0 auto 30px;
+    text-align: left;
+    font-size: 1.3em;
+}
+
+.shipping-info p {
+    margin-bottom: 10px;
+}
+
+.shipping-info strong {
+    color: rgba(45, 114, 67, 0.71);
+    font-size: 1.2em;
+}
+
+/* Стили для формы заказа */
+.order-form {
+    max-width: 70%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.order-form p {
+    margin-bottom: 20px;
+}
+
+.order-form label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+    color: rgba(45, 114, 67, 0.71);
+}
+
+.order-form input[type="text"],
+.order-form input[type="email"],
+.order-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+.order-form input[type="submit"] {
+    background-color: rgba(45, 114, 67, 0.71);
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.3em;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 10px;
+}
+
+.order-form input[type="submit"]:hover {
+    background-color: rgba(45, 114, 67, 1);
+    transform: translateY(-3px);
+}
+
+span p {
+    text-align: center;
+}
+
+.Super_title {
+    display: flex;
+    justify-content: center;
+}
+
+.rosmarins_1 {
+    height: 100px;
+    width: auto;
+    transform: display(90deg);
+}
+
+.rosmarins_2 {
+    height: 100px;
+    width: auto;
+    transform: display(-90deg);
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .order-info,
+    .shipping-info,
+    .order-form {
+        max-width: 90%;
+    }
+
+    .order-form input[type="submit"] {
+        width: 100%;
+    }
+}
+

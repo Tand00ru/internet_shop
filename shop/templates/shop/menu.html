@@ -1,0 +1,310 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa Di Sapore</title>
+    <link href="https://fonts.googleapis.com/css2?family=Jim+Nightshade&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+</head>
+<body>
+<header class="main_header">
+        <div class="main_header_name">
+        <a href="{% url 'shop:main' %}">
+            <div class="header_main_img">
+                <img src="{% static 'images/near_logo.png' %}" alt="Image near logo" class="main_img">
+            </div>
+            <!-- /.header_main_img -->
+            <div class="main_name_and_img">
+                <div class="main_name">
+                    <p class="main_name_logo">Casa Di Sapore</p>
+                </div>
+                <!-- /.main_name -->
+                <div class="second_main__img">
+                    <img src="{% static '/images/under_logo.svg' %}" alt="Image under logo" class="under_text">
+                </div>
+                <!-- /.second_main__img -->
+            </div>
+            <!-- /.main_name_and_img -->
+        </a>
+        <!-- /.main_header_name -->
+
+        {% if user.is_authenticated and user.is_superuser %}
+        <a href="http://127.0.0.1:8001/admin_panel/categories" class="admin-link">
+            <img src="{% static 'images/bd.png' %}" alt="Admin Panel" class="admin-icon">
+        </a>
+        {% endif %}
+        </div>
+
+        <!-- center -->
+        <div class="center_header">
+            <a href="{% url 'shop:menu' %}" class="header_button">Menu</a>
+            <img src="{% static '/images/center.svg' %}" alt="Center image" class="main_header_center">
+            <a href="{% url 'shop:about' %}" class="header_button">About Us</a>
+        </div>
+        <!-- /.center_header -->
+
+        <div class="right_header">
+            <img src="{% static 'images/rosmarin_2.svg' %}" alt="rosmarin" class="rosmarin_header">
+            <a href="http://127.0.0.1:8001/cart/" class="cart-link">
+                <img src="{% static 'images/cart.png' %}" alt="Cart" class="cart-icon">
+            </a>
+            {% if user.is_authenticated %}
+<form method="post" action="{% url 'shop:logout' %}" class="log-in_and_under-img">
+    {% csrf_token %}
+    <button type="submit" class="log-in_and_img">
+        <div class="log-in_header">
+            <p class="log-in">Log out</p>
+            <img src="{% static 'images/account_logo.png' %}" alt="Account logo" class="person">
+        </div>
+        <div class="under_img_log_in">
+        <img src="{% static 'images/under_logo.svg' %}" alt="" class="under_text">
+    </div>
+    </button>
+</form>
+
+            {% else %}
+                <a href="{% url 'shop:login' %}" class="log-in_and_under-img">
+                    <div class="log-in_and_img">
+                        <div class="log-in_header">
+                            <p class="log-in">Log in</p>
+                            <img src="{% static 'images/account_logo.png' %}" alt="Account logo" class="person">
+                        </div>
+                    </div>
+                    <!-- /.log-in_and_img -->
+
+                    <div class="under_img_log_in">
+                        <img src="{% static 'images/under_logo.svg' %}" alt="" class="under_text">
+                    </div>
+                    <!-- /.under_img_log_in -->
+                </a>
+                <!-- /.log-in_and_under-img -->
+            {% endif %}
+        </div>
+        <!-- /.right_header -->
+    </header>
+    <!-- /.main_header -->
+
+
+    
+    <main>
+        <div class="main_image">
+            <div class="first_main_lines">
+                <img src="{% static 'images/line_1.svg' %}" alt="" class="line">
+                <img src="{% static 'images/line_1.svg' %}" alt="" class="line">
+            </div>
+            <!-- /.main_lines -->
+            <div class="restorant_image">
+                <p class="main_text_on_image">
+                    ~Feel at Home with Every Slice~
+                </p>
+                <!-- /.main_text_on_image -->
+            </div>
+            <!-- /.restorant_image -->
+            <div class="second_main_lines">
+                <img src="{% static 'images/line_1.svg' %}" alt="" class="line">
+                <img src="{% static 'images/line_1.svg' %}" alt="" class="line">
+            </div>
+            <!-- /.main_lines -->
+        </div>
+        <!-- /.main_image -->
+
+
+<div class="new_products">
+    <div class="new_products_2">
+        {% for product in new_products %}
+            <div class="{% cycle 'first_product' 'second_product' 'third_product' %}">
+                <img src="{% static 'images/right_branch.png' %}" alt="rosmarin" class="rosmarin">
+                <div class="card_new_product">
+                    <div class="products">
+                        <div class="image_product">
+                            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product_image">
+                        </div>
+                        <div class="rosmarin_near_product">
+                            <img src="{% static 'images/rosmarin_2.png' %}" alt="" class="rosmarin_product">
+                        </div>
+                    </div>
+                </div>
+                <p class="name_new_product">{{ product.name }}</p>
+                <div class="image_under_new_product">
+                    <img src="{% static 'images/under_logo.png' %}" alt="Under_name" class="under_new_product">
+                </div>
+                <p class="text_new_product">{{ product.description }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+            <div class="images_under_new_products">
+                <img src="{% static 'images/left_branch.png' %}" alt="left_branch" class="left_branch">
+                <div class="beautiful_picture"></div>
+                <img src="{% static 'images/right_branch.png' %}" alt="right_branch" class="right_branch">
+            </div>
+            <!-- /.images_under_new_products -->
+        </div>
+        <!-- /.new_products -->
+
+        <div class="under_new_products">
+
+            <div class="left_picture_under_new_products"></div>
+            <div class="center_picture_under_new_products"></div>
+            <div class="rigth_picture_under_new_products"></div>
+
+        </div>
+        <!-- /.under_new_products -->
+
+<section class="categories_search">
+    <div class="categories_products">
+        <ul>
+            <li {% if not category %}class="selected"{% endif %}>
+                <img src="{% static 'images/left_branch.png' %}" class="left_brach_rosm">
+                <a href="{% url 'shop:menu' %}"><p>All Products</p></a>
+                <img src="{% static 'images/right_branch.png' %}" class="right_brach_rosm">
+                <img src="{% static 'images/berry.png' %}" class="berry">
+            </li>
+            {% for c in categories %}
+                <li {% if category and category.slug == c.slug %}class="selected"{% endif %}>
+                    <img src="{% static 'images/left_branch.png' %}" class="left_brach_rosm">
+                    <a href="{% url 'shop:menu_by_category' category_slug=c.slug %}"><p>{{ c.name }}</p></a>
+                    <img src="{% static 'images/right_branch.png' %}" class="right_brach_rosm">
+                    <img src="{% static 'images/berry.png' %}" class="berry">
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+        <div class="search_products">
+                <img src="{% static 'images/left_branch.png' %}" class="left_brach_rosm">
+                <form method="GET" action="{% url 'shop:menu' %}">
+                    <input type="text" name="q" class="search" placeholder="Search products..." value="{{ query|default_if_none:'' }}">
+                    <button type="submit" class="search_button">🔍</button>
+                </form>
+                <img src="{% static 'images/right_branch.png' %}" class="right_brach_rosm">
+        </div>
+    </section>
+
+        <div class="under_new_products2">
+
+            <div class="left_picture_under_new_products2"></div>
+            <div class="left_picture_under_new_products2"></div>
+            <div class="left_picture_under_new_products2"></div>
+
+        </div>
+        <!-- /.under_new_products -->
+
+
+        <div class="goods_list">
+
+            <div class="goods_list_x">
+
+                <div class="image_near_list_left">
+                    <img src="{% static 'images/right_branch_rosmarin.png' %}" alt="rosmarin" class="near_goods">
+                </div>
+
+                <ul class="goods">
+                    {% for product in products %}
+
+                    <li class="goods_info">
+
+                        <section class="information_goods_1">
+
+                            <div class="picture_goods">
+                                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="goods_images">
+                            </div>
+
+                            <div class="other_info_goods">
+
+                                <p class="name_goods">{{ product.name }}</p>
+                                <p class="info_goods">{{ product.description }}</p>
+                                <div class="end_goods">
+
+                                    <p class="price_goods">
+                                        {{ product.price }}{{ product.currency }}/{{ product.quantity }}{{ product.measurement }}
+                                    </p>
+                                    <a href="{% url 'shop:cart' product.id product.slug %}" class="buy">+add</a>
+
+                                </div>
+
+                            </div>
+                            <!-- /.other_info_goods -->
+
+                        </section>
+
+                        <div class="under_goods">
+                            <img src="{% static 'images/under_goods.png' %}" alt="" class="under_goods_2">
+                        </div>
+
+                    </li>
+                    <!-- /.goods_info -->
+
+                    {% empty %}
+                    <h1>Товары отсутствуют</h1>
+                    {% endfor %}
+
+                </ul>
+                <!-- /.goods -->
+
+
+                <div class="image_near_list_rigth">
+                    <img src="{% static 'images/right_branch_rosmarin.png' %}" alt="rosmarin" class="near_goods">
+                </div>
+
+            </div>
+            <!-- /.goods_list_x -->
+
+            
+        </div>
+        <!-- /.goods_list -->
+
+    </main>
+
+
+    <hr>
+    <footer>
+        <div class="left_footer">
+            <p class="info_restorant">
+                information@mail.ru <br>
+                https://vk.com./Casa_Di_Sapore
+            </p>
+            <div class="two_lines_1">
+                <img src="{% static 'images/under_logo.svg' %}" alt="" class="under_text_2">
+                <img src="{% static 'images/under_logo.svg' %}" alt="" class="under_text_2">
+            </div>
+            <!-- /.two_lines -->
+        </div>
+        <!-- /.left_footer -->
+
+        <div class="center_footer">
+
+            <img src="{% static 'images/pizza_footer.svg' %}" alt="" class="center_pizza">
+            <p class="except_monday">Except Monday</p>
+            <div class="rosmar_in_footer_time">
+                <img src="{% static 'images/rosmarin_2.svg' %}" alt="" class="rosmarin_footer_1">
+                <p class="time">9:00-20:00</p>
+                <img src="{% static 'images/rosmarin_2.svg' %}" alt="" class="rosmarin_footer_2">
+            </div>
+
+        </div>
+        <!-- /.center_footer -->
+
+        <div class="right_footer">
+            <p class="address_restourant">
+                Moscow, Suzdalskaya st., 12 A,<br>
+                Shopping center "Suzdalsky", 1st floor.
+            </p>
+            <div class="two_lines_2">
+                <img src="{% static 'images/under_logo.svg' %}" alt="" class="under_text_2">
+                <img src="{% static 'images/under_logo.svg' %}" alt="" class="under_text_2">
+            </div>
+            <!-- /.two_lines -->
+        </div>
+        <!-- /.right_footer -->
+
+
+    </footer>
+
+    
+</body>
+</html>

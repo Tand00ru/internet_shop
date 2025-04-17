@@ -1,0 +1,489 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    background-color: #E6D5B4;
+}
+
+p {
+    font-family: 'Jim Nightshade', cursive;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    cursor: default;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+.main_header {
+    background-color: #E6D5B4;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    height: 65px;
+    display: flex;
+}
+
+.cart-link {
+    display: flex;
+    align-items: center;
+    margin-right: 10%;
+}
+
+.cart-icon {
+    width: auto;
+    height: 60%;
+    object-fit: contain;
+    margin-left: 15px;
+}
+
+.main_header_name {
+    display: flex;
+    margin-left: 20px;
+    width: 25%;
+}
+
+.main_header_name a {
+    width: auto;
+    display: flex;
+    text-decoration: none;
+    color: black;
+}
+
+.main_name_and_img {
+    padding-top: 11px;
+    margin-left: -9px;
+}
+
+.main_img {
+    width: 80px;
+    height: 50px;
+    margin-top: 5px;
+    margin-left: -5px;
+}
+
+.second_main__img {
+    position: absolute;
+    width: 100px;
+    top: 30px;
+}
+
+.under_text {
+    width: 100px;
+}
+
+.main_name_logo {
+    position: relative;
+    font-size: 30px;
+}
+
+.center_header {
+    /* margin-left: 50px; */
+    max-lines: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    flex-grow: 1;
+}
+.header_button {
+    border: none;
+    background-color: rgba(45, 114, 67, 0.71);
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Jim Nightshade', cursive;
+    font-size: 23px;
+    height: 30px;
+    width: 140px;
+    margin-top: 15px;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+
+
+.main_header_center {
+    max-width: 100%;
+    height: auto;
+    width: 100px;
+}
+
+.right_header {
+    width: 25%;
+    margin-right: 15px;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto;
+}
+
+.log-in_and_img {
+    max-width: 120px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: none;
+    border: none;
+}
+
+.log-in_and_img:hover {
+    cursor: pointer;
+}
+.rosmarin_header {
+    width: 190px;
+    height: 190px;
+    margin-top: -70px;
+    margin-right: -45px;
+}
+
+.admin-icon {
+    width: 60%;
+    height: auto;
+    object-fit: contain;
+    margin-left: 75%;
+}
+
+.log-in_header {
+    position: relative;
+    padding-top: 11px;
+    font-size: 30px;
+    text-decoration: none;
+    font-weight: normal;
+    font-style: normal;
+    color: black;
+    display: flex;
+    align-items: center
+}
+
+.under_img_log_in {
+    position: absolute;
+    width: 100px;
+    top: 30px;
+}
+
+.person {
+    margin-left: 15px;
+    width: 23%;
+    height: 20%;
+    margin-bottom: 10%;
+}
+
+.main_header_center {
+    width: 105px;
+}
+
+
+
+
+/* footer */
+
+footer {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    grid-template-rows: auto auto auto;
+    gap: 20px;
+}
+
+.info_restorant {
+    font-size: 30px;
+    text-align: center;
+}
+
+.two_lines_1 {
+    display: flex;
+    justify-content: center;
+    margin-top: -20px;
+}
+
+.under_text_2 {
+    width: 25%;
+}
+
+.two_lines_2 {
+    display: flex;
+    justify-content: center;
+    margin-top: -20px;
+}
+
+.address_restourant {
+    font-size: 30px;
+    text-align: center;
+}
+
+.center_pizza {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 125px;
+}
+.except_monday {
+    text-align: center;
+    font-size: 30px;
+}
+
+.rosmar_in_footer_time {
+    display: flex;
+    justify-content: space-between;
+}
+
+.time {
+    position: relative;
+    font-size: 30px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.rosmarin_footer_1 {
+    transform: rotate(-120deg);
+    margin-top: -75px;
+    margin-right: -40px;
+}
+
+.rosmarin_footer_2 {
+    margin-top: -80px;
+    margin-left: -40px;
+}
+
+.image_under_info_product {
+    margin-top: -10px;
+}
+
+hr {
+    padding-top: 80px;
+    border: none;
+    border-bottom: 3px solid #0000001b;
+    margin: 0 0 30px 0;
+    width: 100%;
+}
+
+main {
+    width: 100%;
+    height: auto;
+}
+
+.cart {
+    width: 100%;
+    height: 600px;
+    padding: 50px 50px 50px 50px;
+}
+
+.cart_info {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.back {
+    width: 100%;
+    height: 10%;
+    padding-top: 10px;
+    display: flex;
+    border: none;
+    background: none;
+    outline: none;
+    justify-content: flex-start;
+}
+
+.back a {
+    display: flex;
+    width: auto;
+    cursor: pointer;
+}
+
+.back  a p {
+    width: 20%;
+    height: auto;
+    border: none;
+    font-size: 28px;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.back img {
+    height: 90%;
+    width: auto;
+}
+
+.cart_info_text_button {
+    padding-left: 5%;
+    width: 47%;
+    height: 365px;
+}
+
+.cart_info_text_picture{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.cart_buttons {
+    width: 90%;
+    height: 20%;    
+    margin-top: 25%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart_quantity {
+    display: flex;
+    width: 40%;
+    height: 100%;
+    align-items: center;
+}
+
+.minus {
+    width: auto;
+    height: 50%;
+    background: none;
+    cursor: pointer;
+    border: none;
+    text-align: right;
+    padding-right: 10px;
+    font-size: 25px;
+}
+
+.quantity_add_to_cart {
+    width: 100%;
+    height: 50%;
+    border-radius: 8px;
+    background: none;
+    border: 2px solid #BDAF93;
+    box-sizing: border-box;
+    font-size: 20px;
+    font-family: 'Jim Nightshade', cursive;
+    text-align: center;
+    outline: none;
+
+}
+.plus {
+    width: auto;
+    height: 50%;
+    background: none;
+    cursor: pointer;
+    border: none; 
+    text-align: left;
+    padding-left: 10px;
+    font-size: 25px;
+}
+
+.add_to_cart_button {
+    width: 35%;
+    height: 100%; 
+}
+
+.add_to_cart {
+    font-family: 'Jim Nightshade', cursive;
+    width: 100%;
+    height: 100%;
+    background: none;
+    cursor: pointer;
+    border: none;
+    font-size: 25px;
+    text-align: right;
+    padding-left: 10px;
+}
+
+.under_cart_info_picture_2 {
+    width: 95%;
+    height: auto;    
+    display: flex;
+    margin-top: 20px;
+    gap: 2%;
+}
+
+.under_info_cart {
+    width: 45%;
+    height: auto;
+}
+
+.cart_info_picture_2 {
+    width: 70%;
+    height: 100%;
+}
+
+.rosmarin_rigth {
+    width: 30%;
+    height: auto;
+}
+
+.rosmarin_rigth_2 {
+    width: 100%;
+    height: auto;
+    transform: rotate(-45deg);
+}
+
+
+.cart_info_2 {
+    width: 90%;
+    height: auto;
+}
+
+.name_product_cart {
+    font-size: 35px;
+}
+
+.size_product_cart {
+    font-size: 20px;
+    opacity: 0.85;
+}
+
+.information_product_cart {
+    width: 100%;
+    font-size: 25px;
+    text-align: justify;
+}
+
+.cart_picture {
+    width: 47vw;
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.cart_picture_2 {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.cart_picture_3 {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    border: 3px solid black;
+}
+
+.rosmarin_under_cart_picture {
+    position: absolute;
+    width: 8vw;
+    max-width: 70px;
+    height: auto;
+    top: 62%;
+    left: -2%;
+    transform: rotate(-46deg)
+}
+
+@media (max-width: 768px) {
+    .cart_picture {
+        width: 80vw; /* На маленьких экранах делаем шире */
+        max-width: 400px;
+    }
+
+    .rosmarin_under_cart_picture {
+        width: 6vw;
+        max-width: 50px;
+        top: 78%;
+        left: 4%;
+    }
+}
+
+

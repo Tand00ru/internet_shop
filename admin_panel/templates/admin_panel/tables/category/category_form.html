@@ -1,0 +1,21 @@
+{% extends 'admin_panel/base.html' %}
+
+{% block content %}
+<h2>{% if category %}Редактировать{% else %}Добавить{% endif %} категорию</h2>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label>Название:</label><br>
+    <input type="text" name="name" value="{{ category.name|default_if_none:'' }}" required><br><br>
+
+    <label>Слаг:</label><br>
+    <input type="text" name="slug" value="{{ category.slug|default_if_none:'' }}" required><br><br>
+
+    <label>Описание:</label><br>
+    <textarea name="description">{{ category.description|default_if_none:'' }}</textarea><br><br>
+
+    <label>Изображение:</label><br>
+    <input type="file" name="image"><br><br>
+
+    <button type="submit">Сохранить</button>
+</form>
+{% endblock %}

@@ -1,0 +1,301 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa Di Sapore</title>
+    <link href="https://fonts.googleapis.com/css2?family=Jim+Nightshade&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body>
+<header class="main_header">
+        <div class="main_header_name">
+        <a href="{% url 'shop:main' %}">
+            <div class="header_main_img">
+                <img src="{% static 'images/near_logo.png' %}" alt="Image near logo" class="main_img">
+            </div>
+            <!-- /.header_main_img -->
+            <div class="main_name_and_img">
+                <div class="main_name">
+                    <p class="main_name_logo">Casa Di Sapore</p>
+                </div>
+                <!-- /.main_name -->
+                <div class="second_main__img">
+                    <img src="{% static '/images/under_logo.svg' %}" alt="Image under logo" class="under_text">
+                </div>
+                <!-- /.second_main__img -->
+            </div>
+            <!-- /.main_name_and_img -->
+        </a>
+        <!-- /.main_header_name -->
+
+        {% if user.is_authenticated and user.is_superuser %}
+        <a href="http://127.0.0.1:8001/admin_panel/categories" class="admin-link">
+            <img src="{% static 'images/bd.png' %}" alt="Admin Panel" class="admin-icon">
+        </a>
+        {% endif %}
+        </div>
+
+        <!-- center -->
+        <div class="center_header">
+            <a href="{% url 'shop:menu' %}" class="header_button">Menu</a>
+            <img src="{% static '/images/center.svg' %}" alt="Center image" class="main_header_center">
+            <a href="{% url 'shop:about' %}" class="header_button">About Us</a>
+        </div>
+        <!-- /.center_header -->
+
+        <div class="right_header">
+            <img src="{% static 'images/rosmarin_2.svg' %}" alt="rosmarin" class="rosmarin_header">
+            <a href="http://127.0.0.1:8001/cart/" class="cart-link">
+                <img src="{% static 'images/cart.png' %}" alt="Cart" class="cart-icon">
+            </a>
+            {% if user.is_authenticated %}
+<form method="post" action="{% url 'shop:logout' %}" class="log-in_and_under-img">
+    {% csrf_token %}
+    <button type="submit" class="log-in_and_img">
+        <div class="log-in_header">
+            <p class="log-in">Log out</p>
+            <img src="{% static 'images/account_logo.png' %}" alt="Account logo" class="person">
+        </div>
+        <div class="under_img_log_in">
+        <img src="{% static 'images/under_logo.svg' %}" alt="" class="under_text">
+    </div>
+    </button>
+</form>
+
+            {% else %}
+                <a href="{% url 'shop:login' %}" class="log-in_and_under-img">
+                    <div class="log-in_and_img">
+                        <div class="log-in_header">
+                            <p class="log-in">Log in</p>
+                            <img src="{% static 'images/account_logo.png' %}" alt="Account logo" class="person">
+                        </div>
+                    </div>
+                    <!-- /.log-in_and_img -->
+
+                    <div class="under_img_log_in">
+                        <img src="{% static 'images/under_logo.svg' %}" alt="" class="under_text">
+                    </div>
+                    <!-- /.under_img_log_in -->
+                </a>
+                <!-- /.log-in_and_under-img -->
+            {% endif %}
+        </div>
+        <!-- /.right_header -->
+    </header>
+    <!-- /.main_header -->
+
+
+    <main>
+        
+    <div class="main_image">
+        <div class="first_main_lines">
+            <img src="{% static 'images/line_1.svg' %}" alt="" class="line">
+            <img src="{% static 'images/line_1.svg' %}" alt="" class="line">
+        </div>
+        <!-- /.main_lines -->
+        <div class="restorant_image">
+            <p class="main_text_on_image">
+                ~Feel at Home with Every Slice~
+            </p>
+            <!-- /.main_text_on_image -->
+        </div>
+        <!-- /.restorant_image -->
+        <div class="second_main_lines">
+            <img src="{% static 'images/line_1.svg' %}" alt="" class="line">
+            <img src="{% static 'images/line_1.svg' %}" alt="" class="line">
+        </div>
+        <!-- /.main_lines -->
+    </div>
+    <!-- /.main_image -->
+
+
+
+    <div class="product_list">
+
+        <div class="product_1">
+
+            <div class="products"> 
+                <div class="image_product">
+                    <img src="{% static 'images/drink.png' %}" alt="Drink" class="drinks">
+                </div>
+                <!-- /.image_product -->
+                <div class="rosmarin_near_product">
+                    <img src="{% static 'images/rosmarin_2.png' %}" alt="" class="rosmarin_product">
+                </div>
+            </div>
+            <!-- /.products-->
+
+
+
+            <div class="product_info">
+
+                <div class="product_information">
+                    <p class="name_product">Drinks</p>
+                    <p class="info_product">
+                        Enjoy refreshing lemonades, rich coffee, or a glass of wine.<br>
+                        Our drinks perfectly enhance every meal.<br>
+                        Try lemonade with our Vegetarian Pizza!
+                    </p>
+                </div>
+                <!-- /.product_information -->
+
+                <div class="image_under_info_product">
+                    <img src="{% static 'images/under_logo.svg' %}" alt="" class="under_product">
+                </div>
+                <!-- /.image_under_info_product -->
+
+            </div>
+            <!-- /.product_info -->
+
+            <div class="image_rosmarin_right">
+                <img src="{% static 'images/right_branch.png' %}" alt="" class="rosmarin_right_product">
+            </div>
+            <!-- /.image_rosmarin_right -->
+
+        </div>
+        <!-- /.product_1 -->
+
+        <div class="product_2">
+
+            <div class="products"> 
+                <div class="image_product">
+                    <img src="{% static 'images/pizza_2.png' %}" alt="Pizza" class="pizza">
+                </div>
+                <!-- /.image_product -->
+                
+                <div class="rosmarin_near_product_2">
+
+                    <img src="{% static 'images/rosmarin_2.png' %}" alt="" class="rosmarin_product">
+                </div>
+            </div>
+            <!-- /.products -->
+    
+    
+                <div class="product_info">
+    
+                    <div class="product_information">
+                        <p class="name_product">Pizza</p>
+                        <p class="info_product">
+                            Try our classics: Margherita, Pepperoni, or Four Cheese.<br>
+                            Choose your crust: classic, gluten-free, or with added spices.<br> 
+                            Ready in just 15 minutes!
+                        </p>
+                    </div>
+                    <!-- /.product_information -->
+    
+                    <div class="image_under_info_product">
+                        <img src="{% static 'images/under_logo.svg' %}" alt="" class="under_product">
+                    </div>
+                    <!-- /.image_under_info_product -->
+    
+                </div>
+                <!-- /.product_info -->
+    
+                <div class="image_rosmarin_left">
+                    <img src="{% static 'images/left_branch.png' %}" alt="" class="rosmarin_left_product">
+                </div>
+                <!-- /.image_rosmarin_left-->
+    
+        </div>
+        <!-- /.product_2 -->
+        
+        <div class="product_1">
+
+            <div class="products"> 
+                <div class="image_product">
+                    <img src="{% static 'images/Ice_cream.png' %}" alt="desserts" class="desserts">
+                </div>
+                <!-- /.image_product -->
+                <div class="rosmarin_near_product">
+                    <img src="{% static 'images/rosmarin_2.png' %}" alt="" class="rosmarin_product">
+                </div>
+            </div>
+            <!-- /.products-->
+
+
+
+            <div class="product_info">
+
+                <div class="product_information">
+                    <p class="name_product">Desserts</p>
+                    <p class="info_product">
+                        The perfect finish – try our creamy Tiramisu or crispy Cannoli.<br>
+                        Try them with an espresso for full indulgence!<br>
+                        Mini portions are available for sweet lovers.
+                    </p>
+                </div>
+                <!-- /.product_information -->
+
+                <div class="image_under_info_product">
+                    <img src="{% static 'images/under_logo.svg' %}" alt="" class="under_product">
+                </div>
+                <!-- /.image_under_info_product -->
+
+            </div>
+            <!-- /.product_info -->
+
+            <div class="image_rosmarin_right">
+                <img src="{% static 'images/right_branch.png' %}" alt="" class="rosmarin_right_product">
+            </div>
+            <!-- /.image_rosmarin_right -->
+
+        </div>
+        <!-- /.product_1 -->
+
+    </div>
+    <!-- /.product_list -->
+
+    </main>
+
+
+
+
+
+
+    <footer>
+        <div class="left_footer">
+            <p class="info_restorant">
+                information@mail.ru <br>
+                https://vk.com./Casa_Di_Sapore
+            </p>
+            <div class="two_lines_1">
+                <img src="{% static 'images/under_logo.svg' %}" alt="" class="under_text_2">
+                <img src="{% static 'images/under_logo.svg' %}" alt="" class="under_text_2">
+            </div>
+            <!-- /.two_lines -->
+        </div>
+        <!-- /.left_footer -->
+
+        <div class="center_footer">
+
+            <img src="{% static 'images/pizza_footer.svg' %}" alt="" class="center_pizza">
+            <p class="except_monday">Except Monday</p>
+            <div class="rosmar_in_footer_time">
+                <img src="{% static 'images/rosmarin_2.svg' %}" alt="" class="rosmarin_footer_1">
+                <p class="time">9:00-20:00</p>
+                <img src="{% static 'images/rosmarin_2.svg' %}" alt="" class="rosmarin_footer_2">
+            </div>
+
+        </div>
+        <!-- /.center_footer -->
+
+        <div class="right_footer">
+            <p class="address_restourant">
+                Moscow, Suzdalskaya st., 12 A,<br>
+                Shopping center "Suzdalsky", 1st floor.
+            </p>
+            <div class="two_lines_2">
+                <img src="{% static 'images/under_logo.svg' %}" alt="" class="under_text_2">
+                <img src="{% static 'images/under_logo.svg' %}" alt="" class="under_text_2">
+            </div>
+            <!-- /.two_lines -->
+        </div>
+        <!-- /.right_footer -->
+
+
+    </footer>
+</body>
+</html>
